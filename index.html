@@ -1,0 +1,17 @@
+<!doctype>
+<html>
+<head></head>
+<body>
+<script>
+navigator.serviceWorker.register('sw.js');
+
+self.addEventListener('message', function (e) {
+    console.log('got message:', e.data);
+});
+
+navigator.serviceWorker.ready.then(function(r) {
+  r.active.postMessage('page-got-controller');
+});
+</script>
+</body>
+</html>
