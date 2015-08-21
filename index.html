@@ -2,11 +2,13 @@
 <html>
 <head></head>
 <body>
+<div id="out"></div>
 <script>
 navigator.serviceWorker.register('sw.js');
 
-self.addEventListener('message', function (e) {
+navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
+    document.querySelector('#out').innerHTML = e.data;
 });
 
 navigator.serviceWorker.ready.then(function(r) {
