@@ -6,7 +6,7 @@ self.addEventListener("message", function(e) {
       });
     });
   }
-};
+});
 
 self.addEventListener("install", function(e) {
   e.waitUntil(
