@@ -11,7 +11,7 @@ self.addEventListener("message", function(e) {
 self.addEventListener("install", function(e) {
   e.waitUntil(
     caches.open("shell-v1").then(function(cache) {
-      return cache.add("/index.html");
+      return cache.add("/test/index.html");
     })
   );
 });
