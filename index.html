@@ -9,6 +9,10 @@ navigator.serviceWorker.register('sw.js');
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
     document.querySelector('#out').innerHTML = e.data;
+
+    navigator.serviceWorker.getRegistrations().then(function(regs) {
+      regs.forEach(function(r) { console.log(r); });
+    });
 });
 
 navigator.serviceWorker.ready.then(function(r) {
