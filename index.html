@@ -11,7 +11,7 @@ navigator.serviceWorker.addEventListener('message', function (e) {
     document.querySelector('#out').innerHTML = e.data;
 
     navigator.serviceWorker.getRegistrations().then(function(regs) {
-      regs.forEach(function(r) { console.log(r); });
+      regs.forEach(function(r) { console.log(r.scope); });
     });
 });
 
