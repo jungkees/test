@@ -9,6 +9,9 @@
   <script>
     navigator.serviceWorker.register("https://jungkees.github.io/test/resources/empty-worker.js");
     console.log(navigator.serviceWorker.controller);
+    navigator.serviceWorker.ready.then(function(r) { 
+      console.log(r); 
+    }).catch(function(e) { console.log(e); });
   </script>
 </body>
 </html>
